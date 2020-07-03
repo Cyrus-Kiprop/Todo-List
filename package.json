@@ -1,0 +1,19 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "A simple Todo list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyrus-Kiprop/Todo-List.git"
+  },
+  "author": "Cyrus Kiprop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyrus-Kiprop/Todo-List/issues"
+  },
+  "homepage": "https://github.com/Cyrus-Kiprop/Todo-List#readme"
+}
