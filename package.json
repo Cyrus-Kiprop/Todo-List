@@ -2,9 +2,11 @@
   "name": "todo-list",
   "version": "1.0.0",
   "description": "A simple Todo list",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"test": "echo \"Error: no test specified\" && exit 1",
+	"build": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
     "eslint-plugin-import": "^2.20.2",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.17.2"
+    "stylelint-scss": "^3.17.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   }
 }
