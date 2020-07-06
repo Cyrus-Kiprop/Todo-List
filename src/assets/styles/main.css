@@ -1,0 +1,9 @@
+@import './style.scss';
+
+.container {
+}
+
+.nav_bar {
+  /* height: 50px; */
+  background-color: #e3f2fd;
+}

@@ -1,12 +1,11 @@
-import _ from 'lodash';
+import './assets/styles/reset.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/styles/main.css';
 
-function component() {
-  const element = document.createElement('div');
 
+//  module importation
+import container from './components/Container';
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const todoList = document.getElementById('root');
 
-  return element;
-}
-
-document.body.appendChild(component());
+todoList.appendChild(container);
