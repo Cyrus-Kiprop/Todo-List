@@ -1,5 +1,6 @@
 @import './style.scss';
-
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .container {
 }
 
@@ -12,4 +13,37 @@
   background-color: #0e1127;
   height: 373px;
   color: white;
+  padding-top: 30px;
+}
+
+.social{
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-brand > span{
+font-size: 30px;
+font-family: 'Irish Grover', cursive;
+text-transform: uppercase;
+}
+
+.social > h2{
+	font-weight: 600;
+	font-size: calc(10px + 10 * (100vw - 400px) / 1040);
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid hsla(0,0%,84%,.2);
+}
+.footer-link{
+	color: rgba(255, 255, 255, .5);
+	outline: none;
+	line-height: 22px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	font-family: 'Montserrat', sans-serif;	
+}
+
+.footer-link:hover{
+	text-decoration: none;
+	color: white;
 }
