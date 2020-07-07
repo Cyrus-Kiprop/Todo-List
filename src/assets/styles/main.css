@@ -1,6 +1,7 @@
 @import './style.scss';
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .container {
 }
 
@@ -64,7 +65,8 @@
 }
 
 .left-aside {
-  background-color: #0e1127;
+  /* background-color: #0e1127; */
+  background: #1d1919;
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -83,4 +85,30 @@
 main.body-content {
   min-height: 100vh;
   padding: 3rem;
+}
+
+.project-container {
+  padding: 1rem 0.5rem;
+}
+
+.project-item {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-transform: capitalize;
+  padding: 10px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-item > a {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.project-item > a:hover {
+  text-decoration: none;
+  color: #f8b739;
+}
+
+.active {
+  color: #f8b739 !important;
 }

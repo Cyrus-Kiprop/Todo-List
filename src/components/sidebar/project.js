@@ -1,14 +1,29 @@
 import utils from '../utils';
+import data from '../data';
 
-const data = [];
+const filter = (event) => {
+  const { target } = event;
 
-let ul = utils.make('ul', 'project-container');
+  const allLinks = document.getElementsByClassName('links');
+  Array.from(allLinks).forEach((anchor) => anchor.classList.remove('active'));
 
-const li = utils.make('li', 'd-flex flex-column project-item');
+  target.classList.add('active');
+};
 
-const today = utils.make('a', '');
-const tomorrow = utils.make();
+const projects = utils.make('ul', 'project-container');
 
-const ul = utils.appendBulkChild(ul, [li]);
+data.projects.forEach((project) => {
+  const li = utils.make('li', 'd-flex flex-column project-item');
+  const link = utils.make('a', 'links', undefined, {
+    href: '#',
+  });
 
-export default ul;
+  link.addEventListener('click', filter);
+  const text = document.createTextNode(project);
+
+  link.appendChild(text);
+  li.appendChild(link);
+  projects.appendChild(li);
+});
+
+export default projects;
