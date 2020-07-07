@@ -66,6 +66,18 @@
 .left-aside {
   background-color: #0e1127;
   height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aside-logo {
+  margin: 0 auto 48px;
+  height: 119px;
+  width: 119px;
+  background-color: white;
+  display: block;
+  align-self: center;
 }
 
 main.body-content {
