@@ -1,8 +1,8 @@
-import make from '../utils';
+import utils from '../utils';
 
-const logo = make('a', 'navbar navbar-light bg-light');
+const logo = utils.make('a', 'navbar navbar-light bg-light');
 
-const imgLogo = make('img', 'navbar-brand', undefined, {
+const imgLogo = utils.make('img', 'navbar-brand', undefined, {
   src: 'assets/images/todo-logo.png',
   alt: 'logo',
 });

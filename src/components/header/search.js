@@ -1,15 +1,15 @@
-import make from '../utils';
+import utils from '../utils';
 
-const form = make('form', 'form-inline');
+let form = utils.make('form', 'form-inline');
 
 // input
-const searchInput = make('input', 'form-control mr-sm-2', undefined, {
+const searchInput = utils.make('input', 'form-control mr-sm-2', undefined, {
   placeholder: 'Search...',
   aria_label: 'Search',
   type: 'Search',
 });
 
-const searchBtn = make(
+const searchBtn = utils.make(
   'button',
   'btn btn-outline-success my-2 my-sm-0',
   undefined,
@@ -21,7 +21,7 @@ const searchBtn = make(
 const btnTextNode = document.createTextNode('Add');
 
 searchBtn.appendChild(btnTextNode);
-form.appendChild(searchInput);
-form.appendChild(searchBtn);
+
+form = utils.appendBulkChild(form, [searchInput, searchBtn]);
 
 export default form;
