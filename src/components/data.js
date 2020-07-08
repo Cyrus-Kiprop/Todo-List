@@ -53,4 +53,14 @@ const data = {
   projects,
 };
 
+function localstorage() {
+  const setItems = (data) =>
+    window.localStorage.setItem('data', JSON.stringify(data));
+
+  const getItems = () => JSON.parse(window.localStorage.getItem('data'));
+  return { setItems, getItems };
+};
+
+localstorage();
+
 export default data;
