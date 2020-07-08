@@ -10,7 +10,7 @@ listTitle.appendChild(titleText);
 
 listWrapper = utils.appendBulkChild(listWrapper, [
   listTitle,
-  tableHeader,
+  // tableHeader,
   listItemsWrapper,
 ]);
 
