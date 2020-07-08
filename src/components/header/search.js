@@ -4,7 +4,7 @@ let form = utils.make('form', 'form-inline');
 
 // input
 const searchInput = utils.make('input', 'form-control mr-sm-2', undefined, {
-  placeholder: 'Search...',
+  placeholder: 'Add Project Name..',
   aria_label: 'Search',
   type: 'Search',
 });
