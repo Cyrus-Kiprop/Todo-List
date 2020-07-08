@@ -7,6 +7,38 @@ const todoItems = [
     project: 'Interview',
     complete: false,
   },
+  {
+    title: 'Learn alogrithms',
+    priority: 'high',
+    due: '4/9/2020',
+    description: 'this is just a dummy description of this todo item',
+    project: 'Interview',
+    complete: false,
+  },
+  {
+    title: 'Learn alogrithms',
+    priority: 'high',
+    due: '4/9/2020',
+    description: 'this is just a dummy description of this todo item',
+    project: 'House Remodelling',
+    complete: false,
+  },
+  {
+    title: 'Learn alogrithms',
+    priority: 'high',
+    due: '4/9/2020',
+    description: 'this is just a dummy description of this todo item',
+    project: 'Interview',
+    complete: false,
+  },
+  {
+    title: 'Learn alogrithms',
+    priority: 'high',
+    due: '4/9/2020',
+    description: 'this is just a dummy description of this todo item',
+    project: 'Interview',
+    complete: false,
+  },
 ];
 
 const projects = [
