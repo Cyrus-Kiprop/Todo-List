@@ -7,17 +7,10 @@ module.exports = {
 
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
   },
 
   devtool: 'inline-source-map',
-
-  plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    new HtmlWebpackPlugin({
-      title: 'Development',
-    }),
-  ],
 
   module: {
     rules: [
