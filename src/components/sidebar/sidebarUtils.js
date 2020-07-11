@@ -17,12 +17,13 @@ const projectFilter = (event) => {
   listTitle.appendChild(document.createTextNode(inText));
 
   let newData = [];
-  data.todoItems.forEach((item) => {
+  const data = JSON.parse(window.localStorage.getItem('listItems'))
+  data.forEach((item) => {
     const listItemWrapper = document.getElementsByClassName(
       'list-item-wrapper'
     )[0];
     if (inText === 'All') {
-      newData = data.todoItems;
+      newData = data;
     } else if (item.project === inText) {
       newData.push(item);
     }

@@ -1,4 +1,9 @@
 import utils from '../utils';
+import handlers from './handlers';
+
+const isDone = (event) => {
+  const { target } = event;
+};
 
 const pasteData = (data, parent) => {
   parent.innerHTML = '';
@@ -19,6 +24,7 @@ const pasteData = (data, parent) => {
       );
 
       const deleteIcon = utils.make('i', 'fa fa-times-circle-o', deleteBtn);
+      deleteIcon.addEventListener('click', handlers.handleDeleteItem);
       deleteIcon.setAttribute('aria-hidden', 'true');
       const editIcon = utils.make('i', 'fa fa-pencil', editBtn);
       editIcon.setAttribute('aria-hidden', 'true');
@@ -31,12 +37,12 @@ const pasteData = (data, parent) => {
         td.appendChild(document.createTextNode(item[key]));
 
         listItem.appendChild(td);
+        listItem.setAttribute('data-id', item.uuid);
         listItem = utils.appendBulkChild(listItem, [editBtn, deleteBtn]);
         parent.appendChild(listItem);
       });
     });
   } else {
-
     console.log('NO Itmes in the listfed');
   }
 };

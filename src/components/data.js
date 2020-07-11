@@ -1,3 +1,5 @@
+import utils from './utils';
+
 const todoItems = [
   {
     title: 'Learn alogrithms',
@@ -6,6 +8,7 @@ const todoItems = [
     description: 'this is just a dummy description of this todo item',
     project: 'Interview',
     complete: false,
+    uuid: 12,
   },
   {
     title: 'Learn alogrithms',
@@ -14,6 +17,7 @@ const todoItems = [
     description: 'this is just a dummy description of this todo item',
     project: 'Interview',
     complete: false,
+    uuid: 13,
   },
   {
     title: 'Learn alogrithms',
@@ -22,6 +26,7 @@ const todoItems = [
     description: 'this is just a dummy description of this todo item',
     project: 'House Remodelling',
     complete: false,
+    uuid: 14,
   },
   {
     title: 'Learn alogrithms',
@@ -30,6 +35,7 @@ const todoItems = [
     description: 'this is just a dummy description of this todo item',
     project: 'Interview',
     complete: false,
+    uuid: 15,
   },
   {
     title: 'Learn alogrithms',
@@ -38,6 +44,7 @@ const todoItems = [
     description: 'this is just a dummy description of this todo item',
     project: 'Interview',
     complete: false,
+    uuid: 16,
   },
 ];
 
@@ -48,19 +55,14 @@ const projects = [
   'Interior decoration',
 ];
 
+const itemsDatabase = new utils.Database(todoItems);
+itemsDatabase.setItems('listItems');
+const projectDatabase = new utils.Database(projects);
+projectDatabase.setItems('projects');
+
 const data = {
-  todoItems,
-  projects,
+  todoItems: itemsDatabase.getItems('listItems'),
+  projects: projectDatabase.getItems('projects'),
 };
-
-function localstorage() {
-  const setItems = (data) =>
-    window.localStorage.setItem('data', JSON.stringify(data));
-
-  const getItems = () => JSON.parse(window.localStorage.getItem('data'));
-  return { setItems, getItems };
-};
-
-localstorage();
 
 export default data;

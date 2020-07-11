@@ -1,3 +1,14 @@
+function Database(data = undefined) {
+  this.data = data;
+}
+
+Database.prototype.setItems = function setItems(key) {
+  return window.localStorage.setItem(key, JSON.stringify(this.data));
+};
+Database.prototype.getItems = function getItems(key) {
+  return JSON.parse(window.localStorage.getItem(key));
+};
+
 const utils = function utils() {
   const appendBulkChild = (parent, children) => {
     children.forEach((child) => parent.appendChild(child));
@@ -22,6 +33,7 @@ const utils = function utils() {
   return {
     make,
     appendBulkChild,
+    Database,
   };
 };
 export default utils();
