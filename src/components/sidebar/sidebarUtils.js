@@ -17,7 +17,7 @@ const projectFilter = (event) => {
   listTitle.appendChild(document.createTextNode(inText));
 
   let newData = [];
-  const data = JSON.parse(window.localStorage.getItem('listItems'))
+  const data = JSON.parse(window.localStorage.getItem('listItems'));
   data.forEach((item) => {
     const listItemWrapper = document.getElementsByClassName(
       'list-item-wrapper'
@@ -27,13 +27,46 @@ const projectFilter = (event) => {
     } else if (item.project === inText) {
       newData.push(item);
     }
+
     pasteData(newData, listItemWrapper);
   });
 };
 
+const dltProject = ({ target }) => {
+  const oldProject = JSON.parse(window.localStorage.getItem('projects'));
+  const oldListItems = JSON.parse(window.localStorage.getItem('listItems'));
+
+  const parent = target.parentNode.parentNode.parentNode;
+  const child = target.parentNode.parentNode;
+
+  const current = child.childNodes[0].childNodes[0].textContent;
+  const newProjects = oldProject.filter((item) => item !== current);
+
+  const newListItems = oldListItems.filter((item) => item.project !== current);
+
+  window.localStorage.removeItem('listItems');
+  window.localStorage.removeItem('newProjects');
+
+  window.localStorage.setItem('listItems', JSON.stringify(newListItems));
+  window.localStorage.setItem('projects', JSON.stringify(newProjects));
+
+
+  pasteData(newListItems, document.getElementsByClassName('list-item-wrapper')[0]);
+
+  parent.remove(child);
+};
+
 const pasteProjects = function pasteProjects(projects, filter = projectFilter) {
   JSON.parse(window.localStorage.getItem('projects')).forEach((project) => {
-    const li = utils.make('li', 'd-flex flex-column project-item');
+    const proItem = utils.make('div', 'd-flex justify-content-between');
+    const li = utils.make('li', 'd-flex flex-column project-item ');
+    const deleteBtn = utils.make(
+      'button',
+      'btn btn-outline-danger  action-btn'
+    );
+    const dltIcon = utils.make('i', 'fa fa-times-circle-o ml-auto');
+    deleteBtn.appendChild(dltIcon);
+    deleteBtn.addEventListener('click', dltProject);
     const link = utils.make('a', 'links', undefined, {
       href: '#',
     });
@@ -42,7 +75,9 @@ const pasteProjects = function pasteProjects(projects, filter = projectFilter) {
     const text = document.createTextNode(project);
 
     link.appendChild(text);
-    li.appendChild(link);
+    proItem.appendChild(link);
+    proItem.appendChild(deleteBtn);
+    li.appendChild(proItem);
     projects.appendChild(li);
   });
 };

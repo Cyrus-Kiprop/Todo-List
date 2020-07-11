@@ -5,11 +5,10 @@ function handlers() {
 
     const oldData = JSON.parse(window.localStorage.getItem('listItems'));
     const newData = oldData.filter((item) => {
-      return item.uuid !== Number(itemId);
+      return item.uuid !== itemId;
     });
-    window.localStorage.removeItem('listItems');
-    window.localStorage.setItem('listItems', JSON.stringify(newData));
 
+    console.log(newData);
     parent.parentNode.removeChild(parent);
   };
 
