@@ -8,9 +8,7 @@ const handler = {
     // get inputs from the user
 
     const inputForm = document.getElementsByClassName('list-input-wrapper')[0];
-    console.log(inputForm.data);
-
-    if (event.target.data) console.log(event.target.data);
+    if (event.target.data);
     const userInput = {
       title: '',
       priority: '',
@@ -24,7 +22,6 @@ const handler = {
     const ids = ['title', 'description', 'due-date', 'priority', 'project'];
 
     ids.forEach((id) => {
-      console.log(id);
       if (id === 'title') userInput.title = document.getElementById(id).value;
       if (id === 'project')
         userInput.project = document.getElementById(id).value;
@@ -40,10 +37,9 @@ const handler = {
     if (inputForm.data && inputForm.data !== '') {
       userInput.uuid = inputForm.data;
       const newDB = DB.filter((item) => {
-        console.log(true);
         return item.uuid.toString() !== inputForm.data.toString();
       });
-      console.log(newDB);
+
       newDB.push(userInput);
       DB = newDB;
     } else {
@@ -56,7 +52,6 @@ const handler = {
     document
       .getElementsByClassName('list-input-wrapper')[0]
       .classList.toggle('d-none');
-    console.log(userInput);
   },
 };
 

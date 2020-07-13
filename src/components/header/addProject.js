@@ -1,12 +1,8 @@
 import utils from '../utils';
 import pasteProjects from '../sidebar/sidebarUtils';
-
-console.log(utils.database);
-
 const handleAddProject = (event) => {
   const { target } = event;
   const userInput = document.getElementById('user-project').value;
-  // get data from localstorage
   const projects = JSON.parse(window.localStorage.getItem('projects'));
   projects.push(userInput);
   window.localStorage.removeItem('projects');
@@ -18,11 +14,6 @@ const handleAddProject = (event) => {
   projectContainer.innerHTML = '';
   pasteProjects(projectContainer);
   const itemsDatabase = new utils.Database(todoItems);
-  // itemsDatabase.setItems('listItems');
-  // const projectDatabase = new utils.Database(projects);
-  // projectDatabase.setItems('projects');
-  // window.location.reload();
-  console.log(projects);
 };
 
 let addProject = utils.make('form', 'project-form');

@@ -61,14 +61,13 @@ function handlers() {
   const handleEdit = (event) => {
     const { target } = event;
     const parent = target.parentNode.parentNode;
-    // console.log(parent.innerHTML)
+
     const data = JSON.parse(window.localStorage.getItem('listItems'));
     const current = data.filter((record) => {
       return (
         record.uuid.toString() === parent.getAttribute('data-id').toString()
       );
     });
-    console.log(current);
 
     toggleInputForm(current[0]);
   };

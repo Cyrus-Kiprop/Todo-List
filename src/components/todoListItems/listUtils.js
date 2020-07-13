@@ -17,12 +17,10 @@ const pasteData = (data, parent) => {
         data: item.uuid,
       });
 
-      console.log(item.complete);
       if (item.complete === false) isDone.checked = false;
       if (item.complete === true) {
         isDone.checked = true;
         const parent = isDone.parentNode;
-        console.log(parent);
       }
 
       isDone.addEventListener('click', handlers.isDone);
@@ -59,7 +57,6 @@ const pasteData = (data, parent) => {
       });
     });
   } else {
-    console.log('NO Itmes in the listfed');
   }
 };
 
