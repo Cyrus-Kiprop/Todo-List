@@ -30,13 +30,21 @@ const utils = function utils() {
     return newEl;
   };
 
-  function strike(listItem) {
-    listItem.classList.toggle('strike-through');
-    Array.from(listItem.childNodes)
-      .slice(1, -2)
-      .forEach((element) => {
-        element.classList.add('strike-through');
-      });
+  function strike(listItem, isChecked) {
+    // if (isChecked) listItem.classList.add('strike-through');
+    if (isChecked) {
+      Array.from(listItem.childNodes)
+        .slice(1, -2)
+        .forEach((element) => {
+          element.classList.add('strike-through');
+        });
+    } else {
+      Array.from(listItem.childNodes)
+        .slice(1, -2)
+        .forEach((element) => {
+          element.classList.remove('strike-through');
+        });
+    }
   }
   return {
     make,

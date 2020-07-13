@@ -258,3 +258,11 @@ main.body-content {
 .form-cancel {
   color: #4d4d87;
 }
+
+.w-60 {
+  width: 60%;
+}
+
+.w-20 {
+  width: 18%;
+}

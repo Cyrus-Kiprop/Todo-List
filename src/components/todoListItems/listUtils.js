@@ -40,6 +40,9 @@ const pasteData = (data, parent) => {
         const td = utils.make('span', '');
         td.setAttribute('data-complete', item.complete);
         td.appendChild(document.createTextNode(item[key]));
+        if (key === 'due') td.classList.add('ml-auto');
+        if (key === 'description') td.classList.add('w-60');
+        if (key === 'title') td.classList.add('w-20');
 
         listItem.appendChild(td);
         listItem.setAttribute('data-id', item.uuid.toString());

@@ -25,17 +25,18 @@ function handlers() {
     oldData.push(item);
     window.localStorage.setItem('listItems', JSON.stringify(oldData));
 
-
-    if (isChecked === true) {
-      utils.strike(target.parentNode);
-    }
-    if (isChecked === false) {
-      Array.from(target.parentNode.childNodes)
-        .slice(1, -2)
-        .forEach((element) => {
-          element.classList.remove('strike-through');
-        });
-    }
+    // if (isChecked === true) {
+    console.log(isChecked);
+    utils.strike(target.parentNode, isChecked);
+    // }
+    // if (isChecked === false) {
+    //   console.log(isChecked);
+    //   Array.from(target.parentNode.childNodes)
+    //     .slice(1, -2)
+    //     .forEach((element) => {
+    //       element.classList.add('strike-through');
+    //     });
+    // }
 
     // .classLists.add('strike-through');
     // pasteData(oldData, document.getElementsByClassName('list-item-wrapper')[0]);
