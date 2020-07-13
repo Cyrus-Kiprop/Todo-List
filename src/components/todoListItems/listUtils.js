@@ -19,7 +19,7 @@ const pasteData = (data, parent) => {
 
       if (item.complete === false) isDone.checked = false;
       if (item.complete === true) {
-        isDone.checked = true;
+       isDone.checked = true;
         const parent = isDone.parentNode;
       }
 
