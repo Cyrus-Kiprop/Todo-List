@@ -30,10 +30,20 @@ const utils = function utils() {
     return newEl;
   };
 
+  function strike(listItem) {
+    listItem.classList.toggle('strike-through');
+    Array.from(listItem.childNodes)
+      .slice(1, -2)
+      .forEach((element) => {
+        element.classList.add('strike-through');
+      });
+  }
   return {
     make,
     appendBulkChild,
     Database,
+
+    strike,
   };
 };
 export default utils();

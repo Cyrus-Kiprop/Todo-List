@@ -98,6 +98,10 @@ const addListItem = function addListItem() {
       'list-input-wrapper d-none card position-absolute'
     );
 
+    utils
+      .make('i', 'fa fa-times-circle-o ml-auto form-cancel', formWrapper)
+      .addEventListener('click', () => formWrapper.classList.toggle('d-none'));
+
     const form = utils.make('form', '');
     form.addEventListener('submit', handler.handleSubmit);
 

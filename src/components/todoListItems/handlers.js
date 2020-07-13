@@ -24,7 +24,21 @@ function handlers() {
     const oldData = db.filter((item) => item.uuid.toString() !== id);
     oldData.push(item);
     window.localStorage.setItem('listItems', JSON.stringify(oldData));
-    pasteData(oldData, document.getElementsByClassName('list-item-wrapper')[0]);
+
+
+    if (isChecked === true) {
+      utils.strike(target.parentNode);
+    }
+    if (isChecked === false) {
+      Array.from(target.parentNode.childNodes)
+        .slice(1, -2)
+        .forEach((element) => {
+          element.classList.remove('strike-through');
+        });
+    }
+
+    // .classLists.add('strike-through');
+    // pasteData(oldData, document.getElementsByClassName('list-item-wrapper')[0]);
   };
 
   function toggleInputForm(current = undefined) {
@@ -61,9 +75,10 @@ function handlers() {
     const parent = target.parentNode.parentNode;
 
     const data = JSON.parse(window.localStorage.getItem('listItems'));
-    const current = data.filter((record) => (
-      record.uuid.toString() === parent.getAttribute('data-id').toString()
-    ));
+    const current = data.filter(
+      (record) =>
+        record.uuid.toString() === parent.getAttribute('data-id').toString()
+    );
 
     toggleInputForm(current[0]);
   };
