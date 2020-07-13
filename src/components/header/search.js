@@ -1,6 +1,6 @@
 import utils from '../utils';
 
-let form = utils.make('form', 'form-inline');
+let form = utils.make('form', 'form-inline d-none');
 
 // input
 const searchInput = utils.make('input', 'form-control mr-sm-2', undefined, {

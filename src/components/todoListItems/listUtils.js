@@ -26,14 +26,8 @@ const pasteData = (data, parent) => {
       }
 
       isDone.addEventListener('click', handlers.isDone);
-      const deleteBtn = utils.make(
-        'button',
-        'btn btn-outline-danger  action-btn'
-      );
-      const editBtn = utils.make(
-        'button',
-        'btn btn-outline-success ml-auto action-btn'
-      );
+      const deleteBtn = utils.make('button', 'btn   action-btn');
+      const editBtn = utils.make('button', 'btn  ml-auto action-btn');
 
       const deleteIcon = utils.make('i', 'fa fa-times-circle-o', deleteBtn);
       deleteIcon.addEventListener('click', handlers.handleDeleteItem);

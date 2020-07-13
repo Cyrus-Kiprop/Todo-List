@@ -66,7 +66,7 @@
 
 .left-aside {
   /* background-color: #0e1127; */
-  background: #1d1919;
+  background: #0e1127;
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -99,14 +99,14 @@ main.body-content {
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-item > a {
+.project-item a {
   color: white;
   letter-spacing: 1px;
 }
 
-.project-item > a:hover {
+.project-item a:hover {
   text-decoration: none;
-  color: #f8b739;
+  color: #8fe3a1;
 }
 
 .active {
@@ -141,6 +141,7 @@ main.body-content {
   align-items: center;
   margin-bottom: 0.5rem;
   padding: 0 0.5rem;
+  color: #4d4d87;
 }
 
 .list-item:first-child {
@@ -150,9 +151,10 @@ main.body-content {
   /* width: 25%; */
   padding: 5px 5px;
   font-size: 16px;
-  color: #1d1919;
+  color: #4d4d87;
   text-align: start;
   display: flex;
+  font-weight: 700;
   align-items: center;
 }
 
@@ -176,7 +178,7 @@ main.body-content {
 }
 
 .action-btn > i {
-  color: #f8b739;
+  color: #44cafc;
   font-size: 18px;
 }
 
@@ -241,4 +243,13 @@ main.body-content {
 
 .strike-through {
   text-decoration: line-through;
+}
+
+#user-project {
+  border: 2px solid;
+  color: rgb(150, 188, 239);
+}
+
+.list-title {
+  color: #2f3152;
 }

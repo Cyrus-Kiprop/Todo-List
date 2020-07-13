@@ -28,7 +28,6 @@ contentWrapper = utils.appendBulkChild(contentWrapper, [aside, main]);
 container = utils.appendBulkChild(container, [
   contentWrapper,
   addListItem.addListContainer,
-  footer,
 ]);
 
 export default container;

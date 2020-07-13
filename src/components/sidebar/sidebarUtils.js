@@ -64,7 +64,7 @@ const pasteProjects = function pasteProjects(projects, filter = projectFilter) {
     const li = utils.make('li', 'd-flex flex-column project-item ');
     const deleteBtn = utils.make(
       'button',
-      'btn btn-outline-danger  action-btn'
+      'btn   action-btn'
     );
     const dltIcon = utils.make('i', 'fa fa-times-circle-o ml-auto');
     deleteBtn.appendChild(dltIcon);

@@ -27,14 +27,19 @@ const handleAddProject = (event) => {
 
 let addProject = utils.make('form', 'project-form');
 addProject.addEventListener('submit', handleAddProject);
-let formGroup = utils.make('div', 'form-group');
-const project = utils.make('input', 'form-control', undefined, {
+let formGroup = utils.make('div', 'form-group d-flex mb-0');
+const project = utils.make('input', 'form-control mr-2', undefined, {
   placeholder: 'Add Project',
 });
 project.setAttribute('id', 'user-project');
-const submitProject = utils.make('button', 'btn btn-primary ', undefined, {
-  type: 'submit',
-});
+const submitProject = utils.make(
+  'button',
+  'btn btn-outline-success ',
+  undefined,
+  {
+    type: 'submit',
+  }
+);
 submitProject.appendChild(document.createTextNode('submit'));
 
 formGroup = utils.appendBulkChild(formGroup, [project, submitProject]);
