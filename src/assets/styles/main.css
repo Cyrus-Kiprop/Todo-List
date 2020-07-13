@@ -183,6 +183,9 @@ main.body-content {
 .add-list-wrapper {
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  right: 2rem;
+  bottom: 3rem;
 }
 
 .add-btn {

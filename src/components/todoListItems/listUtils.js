@@ -10,6 +10,7 @@ const pasteData = (data, parent) => {
   if (data) {
     data.forEach((item) => {
       let listItem = utils.make('li', 'list-item');
+      listItem.setAttribute('data-id', item.uuid);
 
       const isDone = utils.make('input', 'is-done', undefined, {
         type: 'checkbox',
@@ -27,6 +28,7 @@ const pasteData = (data, parent) => {
       deleteIcon.addEventListener('click', handlers.handleDeleteItem);
       deleteIcon.setAttribute('aria-hidden', 'true');
       const editIcon = utils.make('i', 'fa fa-pencil', editBtn);
+      editIcon.addEventListener('click', handlers.handleEdit);
       editIcon.setAttribute('aria-hidden', 'true');
 
       listItem = utils.appendBulkChild(listItem, [isDone]);
@@ -37,7 +39,8 @@ const pasteData = (data, parent) => {
         td.appendChild(document.createTextNode(item[key]));
 
         listItem.appendChild(td);
-        listItem.setAttribute('data-id', item.uuid);
+        listItem.setAttribute('data-id', item.uuid.toString());
+
         listItem = utils.appendBulkChild(listItem, [editBtn, deleteBtn]);
         parent.appendChild(listItem);
       });
