@@ -7,7 +7,6 @@ const isDone = (event) => {
 
 const pasteData = (data, parent) => {
   parent.innerHTML = '';
-  console.log(parent);
   if (data) {
     data.forEach((item) => {
       let listItem = utils.make('li', 'list-item');

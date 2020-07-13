@@ -179,3 +179,59 @@ main.body-content {
   color: #f8b739;
   font-size: 18px;
 }
+
+.add-list-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-btn {
+  height: 50px;
+  width: 50px;
+  background-color: #4d4d87;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: rgba(47, 49, 82, 0.1) 0px 0px 40px 0px;
+}
+.add-btn > i {
+  color: #69e8da;
+  font-size: 20px;
+}
+
+.list-input-wrapper {
+  background-color: #f9fafe;
+  min-width: 22rem;
+  box-shadow: rgba(47, 49, 82, 0.1) 0px 0px 40px 0px;
+  padding: 1rem;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.list-input-button {
+  color: rgb(150, 188, 239);
+  background-color: rgb(240, 245, 253);
+  border-radius: 16px;
+  width: 70px;
+  margin-left: auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+}
+
+.list-input-button:hover {
+  border: 2px solid #69e8da;
+  background-color: #4d4d87;
+}
+
+.list-input-button:hover i {
+  color: #69e8da;
+}
+
+.list-input-button > i {
+  font-size: 22px;
+}

@@ -50,8 +50,10 @@ const dltProject = ({ target }) => {
   window.localStorage.setItem('listItems', JSON.stringify(newListItems));
   window.localStorage.setItem('projects', JSON.stringify(newProjects));
 
-
-  pasteData(newListItems, document.getElementsByClassName('list-item-wrapper')[0]);
+  pasteData(
+    newListItems,
+    document.getElementsByClassName('list-item-wrapper')[0]
+  );
 
   parent.remove(child);
 };
@@ -66,17 +68,17 @@ const pasteProjects = function pasteProjects(projects, filter = projectFilter) {
     );
     const dltIcon = utils.make('i', 'fa fa-times-circle-o ml-auto');
     deleteBtn.appendChild(dltIcon);
-    deleteBtn.addEventListener('click', dltProject);
     const link = utils.make('a', 'links', undefined, {
       href: '#',
     });
+    const text = document.createTextNode(project);
+    link.appendChild(text);
+
+    deleteBtn.addEventListener('click', dltProject);
 
     link.addEventListener('click', filter);
-    const text = document.createTextNode(project);
-
-    link.appendChild(text);
     proItem.appendChild(link);
-    proItem.appendChild(deleteBtn);
+    if (link.textContent !== 'All') proItem.appendChild(deleteBtn);
     li.appendChild(proItem);
     projects.appendChild(li);
   });

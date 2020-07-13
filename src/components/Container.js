@@ -3,6 +3,7 @@ import nav from './header/header';
 import asideContainer from './sidebar/aside';
 import footer from './footer/footer';
 import listWrapper from './todoListItems/todoListItems';
+import addListItem from './todoListItems/addTodoListItem';
 
 let container = utils.make('div', 'container-fluid');
 
@@ -24,6 +25,10 @@ let main = utils.make('main', 'body-content');
 main = utils.appendBulkChild(main, [nav, listWrapper]);
 contentWrapper = utils.appendBulkChild(contentWrapper, [aside, main]);
 
-container = utils.appendBulkChild(container, [contentWrapper, footer]);
+container = utils.appendBulkChild(container, [
+  contentWrapper,
+  addListItem.addListContainer,
+  footer,
+]);
 
 export default container;
