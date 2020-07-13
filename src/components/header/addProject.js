@@ -1,5 +1,6 @@
 import utils from '../utils';
 import pasteProjects from '../sidebar/sidebarUtils';
+
 const handleAddProject = (event) => {
   const { target } = event;
   const userInput = document.getElementById('user-project').value;
@@ -9,7 +10,7 @@ const handleAddProject = (event) => {
   window.localStorage.setItem('projects', JSON.stringify(projects));
 
   const projectContainer = document.getElementsByClassName(
-    'project-container'
+    'project-container',
   )[0];
   projectContainer.innerHTML = '';
   pasteProjects(projectContainer);
@@ -29,7 +30,7 @@ const submitProject = utils.make(
   undefined,
   {
     type: 'submit',
-  }
+  },
 );
 submitProject.appendChild(document.createTextNode('submit'));
 

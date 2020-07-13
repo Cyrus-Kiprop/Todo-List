@@ -11,7 +11,7 @@ const asideLogo = utils.make(
   undefined,
   {
     style: 'background-image: url(../../assets/images/todo-logo.png)',
-  }
+  },
 );
 
 asideContainer = utils.appendBulkChild(asideContainer, [asideLogo, projects]);

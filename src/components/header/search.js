@@ -14,7 +14,7 @@ const searchBtn = utils.make(
   undefined,
   {
     type: 'submit',
-  }
+  },
 );
 
 const btnTextNode = document.createTextNode('Add');

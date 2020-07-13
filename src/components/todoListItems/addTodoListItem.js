@@ -23,22 +23,17 @@ const handler = {
 
     ids.forEach((id) => {
       if (id === 'title') userInput.title = document.getElementById(id).value;
-      if (id === 'project')
-        userInput.project = document.getElementById(id).value;
-      if (id === 'priority')
-        userInput.priority = document.getElementById(id).value;
+      if (id === 'project') { userInput.project = document.getElementById(id).value; }
+      if (id === 'priority') { userInput.priority = document.getElementById(id).value; }
       if (id === 'due-date') userInput.due = document.getElementById(id).value;
-      if (id === 'description')
-        userInput.description = document.getElementById(id).value;
+      if (id === 'description') { userInput.description = document.getElementById(id).value; }
     });
 
     let DB = JSON.parse(window.localStorage.getItem('listItems'));
 
     if (inputForm.data && inputForm.data !== '') {
       userInput.uuid = inputForm.data;
-      const newDB = DB.filter((item) => {
-        return item.uuid.toString() !== inputForm.data.toString();
-      });
+      const newDB = DB.filter((item) => item.uuid.toString() !== inputForm.data.toString());
 
       newDB.push(userInput);
       DB = newDB;
@@ -67,7 +62,7 @@ const addListItem = function addListItem() {
   const inputs = () => {
     let formWrapper = utils.make(
       'div',
-      'list-input-wrapper d-none card position-absolute'
+      'list-input-wrapper d-none card position-absolute',
     );
 
     const form = utils.make('form', '');
@@ -95,7 +90,7 @@ const addListItem = function addListItem() {
             rows: 5,
             cols: 33,
             placeholder: 'Enter Description ...',
-          }
+          },
         );
         inputEle.setAttribute('id', 'description');
       }

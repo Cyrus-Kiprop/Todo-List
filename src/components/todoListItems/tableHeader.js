@@ -10,6 +10,6 @@ headers.forEach((header) => {
   const headerText = document.createTextNode(header);
   th.appendChild(headerText);
   tableHeader.appendChild(th);
-  });
+});
 
 export default tableHeader;

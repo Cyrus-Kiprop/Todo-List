@@ -6,9 +6,7 @@ function handlers() {
     const parent = event.target.parentNode.parentNode;
     const itemId = parent.getAttribute('data-id');
     const oldData = JSON.parse(window.localStorage.getItem('listItems'));
-    const newData = oldData.filter((item) => {
-      return item.uuid.toString() !== itemId;
-    });
+    const newData = oldData.filter((item) => item.uuid.toString() !== itemId);
 
     // window.localStorage.removeItem('listItems');
     window.localStorage.setItem('listItems', JSON.stringify(newData));
@@ -63,11 +61,9 @@ function handlers() {
     const parent = target.parentNode.parentNode;
 
     const data = JSON.parse(window.localStorage.getItem('listItems'));
-    const current = data.filter((record) => {
-      return (
-        record.uuid.toString() === parent.getAttribute('data-id').toString()
-      );
-    });
+    const current = data.filter((record) => (
+      record.uuid.toString() === parent.getAttribute('data-id').toString()
+    ));
 
     toggleInputForm(current[0]);
   };

@@ -20,7 +20,7 @@ const projectFilter = (event) => {
   const data = JSON.parse(window.localStorage.getItem('listItems'));
   data.forEach((item) => {
     const listItemWrapper = document.getElementsByClassName(
-      'list-item-wrapper'
+      'list-item-wrapper',
     )[0];
     if (inText === 'All') {
       newData = data;
@@ -52,7 +52,7 @@ const dltProject = ({ target }) => {
 
   pasteData(
     newListItems,
-    document.getElementsByClassName('list-item-wrapper')[0]
+    document.getElementsByClassName('list-item-wrapper')[0],
   );
 
   parent.remove(child);
@@ -64,7 +64,7 @@ const pasteProjects = function pasteProjects(projects, filter = projectFilter) {
     const li = utils.make('li', 'd-flex flex-column project-item ');
     const deleteBtn = utils.make(
       'button',
-      'btn   action-btn'
+      'btn   action-btn',
     );
     const dltIcon = utils.make('i', 'fa fa-times-circle-o ml-auto');
     deleteBtn.appendChild(dltIcon);
