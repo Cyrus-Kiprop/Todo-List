@@ -5,16 +5,16 @@ const todoItems = [
     title: 'Data Structure',
     priority: 'High',
     due: '2020-07-10',
-    description: 'this is just a dummy description of Data Structure',
+    description: 'This is just a dummy description of Data Structure',
     project: 'Interview',
     complete: false,
     uuid: 12,
   },
   {
     title: 'React',
-    priority: 'Average',
+    priority: 'Low',
     due: '2020-07-11',
-    description: 'this is just a dummy description of React',
+    description: 'This is just a dummy description of React',
     project: 'Interview',
     complete: false,
     uuid: 13,
@@ -23,7 +23,7 @@ const todoItems = [
     title: 'Javascript',
     priority: 'High',
     due: '2020-07-04',
-    description: 'this is just a dummy description of Javascript',
+    description: 'This is just a dummy description of Javascript',
     project: 'Coding Challenge',
     complete: false,
     uuid: 14,
@@ -32,7 +32,7 @@ const todoItems = [
     title: 'Ruby',
     priority: 'Low',
     due: '2020-07-08',
-    description: 'this is just a dummy description of Ruby',
+    description: 'This is just a dummy description of Ruby',
     project: 'Coding Challenge',
     complete: true,
     uuid: 15,
@@ -41,18 +41,14 @@ const todoItems = [
     title: 'ROR',
     priority: 'High',
     due: '2020-07-20',
-    description: 'this is just a dummy description of ROR',
+    description: 'This is just a dummy description of ROR',
     project: 'Interview',
     complete: false,
     uuid: 16,
   },
 ];
 
-const projects = [
-  'All',
-  'Interview',
-  'Coding Challenge',
-];
+const projects = ['All', 'Interview', 'Coding Challenge'];
 
 const itemsDatabase = new utils.Database(todoItems);
 itemsDatabase.setItems('listItems');
