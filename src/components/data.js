@@ -51,7 +51,7 @@ const todoItems = [
 const projects = [
   'All',
   'Interview',
-  'Coding Challenge'
+  'Coding Challenge',
 ];
 
 const itemsDatabase = new utils.Database(todoItems);
