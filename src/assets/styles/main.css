@@ -238,3 +238,7 @@ main.body-content {
 .list-input-button > i {
   font-size: 22px;
 }
+
+.strike-through {
+  text-decoration: line-through;
+}

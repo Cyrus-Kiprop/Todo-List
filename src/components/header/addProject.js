@@ -17,7 +17,10 @@ const handleAddProject = (event) => {
   )[0];
   projectContainer.innerHTML = '';
   pasteProjects(projectContainer);
-
+  const itemsDatabase = new utils.Database(todoItems);
+  // itemsDatabase.setItems('listItems');
+  // const projectDatabase = new utils.Database(projects);
+  // projectDatabase.setItems('projects');
   // window.location.reload();
   console.log(projects);
 };

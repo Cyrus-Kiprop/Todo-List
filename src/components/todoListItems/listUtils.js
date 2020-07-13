@@ -14,7 +14,18 @@ const pasteData = (data, parent) => {
 
       const isDone = utils.make('input', 'is-done', undefined, {
         type: 'checkbox',
+        data: item.uuid,
       });
+
+      console.log(item.complete);
+      if (item.complete === false) isDone.checked = false;
+      if (item.complete === true) {
+        isDone.checked = true;
+        const parent = isDone.parentNode;
+        console.log(parent);
+      }
+
+      isDone.addEventListener('click', handlers.isDone);
       const deleteBtn = utils.make(
         'button',
         'btn btn-outline-danger  action-btn'
@@ -43,6 +54,14 @@ const pasteData = (data, parent) => {
 
         listItem = utils.appendBulkChild(listItem, [editBtn, deleteBtn]);
         parent.appendChild(listItem);
+        if (item.complete) {
+          listItem.classList.toggle('strike-through');
+          Array.from(listItem.childNodes)
+            .slice(1, -2)
+            .forEach((element) => {
+              element.classList.add('strike-through');
+            });
+        }
       });
     });
   } else {

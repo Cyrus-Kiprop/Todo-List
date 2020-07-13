@@ -1,11 +1,12 @@
+import utils from '../utils';
+import pasteData from './listUtils';
+
 function handlers() {
   const handleDeleteItem = (event) => {
     const parent = event.target.parentNode.parentNode;
     const itemId = parent.getAttribute('data-id');
-    console.log(JSON.parse(window.localStorage.getItem('listItems')));
     const oldData = JSON.parse(window.localStorage.getItem('listItems'));
     const newData = oldData.filter((item) => {
-      console.log(itemId);
       return item.uuid.toString() !== itemId;
     });
 
@@ -15,8 +16,35 @@ function handlers() {
     parent.parentNode.removeChild(parent);
   };
 
+  const isDone = (event) => {
+    const { target } = event;
+    const isChecked = target.checked;
+    const id = target.getAttribute('data');
+    const db = JSON.parse(window.localStorage.getItem('listItems'));
+    const item = db.filter((item) => item.uuid.toString() === id)[0];
+    item.complete = isChecked;
+    const oldData = db.filter((item) => item.uuid.toString() !== id);
+    oldData.push(item);
+    window.localStorage.setItem('listItems', JSON.stringify(oldData));
+    pasteData(oldData, document.getElementsByClassName('list-item-wrapper')[0]);
+  };
+
   function toggleInputForm(current = undefined) {
-    console.log(current);
+    const select = document.getElementById('project');
+    select.innerHTML = '';
+
+    const projects = JSON.parse(window.localStorage.getItem('projects'));
+
+    // projects.
+
+    projects.forEach((project) => {
+      const option = utils.make('option', '', select, {
+        project,
+      });
+      option.appendChild(document.createTextNode(project));
+    });
+    // select.setAttribute('id', 'project');
+
     const inputForm = document.getElementsByClassName('list-input-wrapper')[0];
     inputForm.data = current.uuid || '';
 
@@ -41,11 +69,7 @@ function handlers() {
       );
     });
     console.log(current);
-    // Array.from(parent.childNodes)
-    //   .slice(1, -2)
-    //   .forEach((span) => {
-    //     console.log(span.innerHTML);
-    //   });
+
     toggleInputForm(current[0]);
   };
 
@@ -53,6 +77,7 @@ function handlers() {
     handleDeleteItem,
     handleEdit,
     toggleInputForm,
+    isDone,
   };
 }
 

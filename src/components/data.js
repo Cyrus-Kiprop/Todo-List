@@ -34,7 +34,7 @@ const todoItems = [
     due: '4/9/2020',
     description: 'this is just a dummy description of this todo item',
     project: 'Interview',
-    complete: false,
+    complete: true,
     uuid: 15,
   },
   {
