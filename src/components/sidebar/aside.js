@@ -1,9 +1,6 @@
+/* eslint-disable import/no-mutable-exports */
 import utils from '../utils';
-import data from '../data';
 import projects from './project';
-
-
-let asideContainer = utils.make('div', 'aside-container w-100 p-4 pt-5');
 
 const asideLogo = utils.make(
   'a',
@@ -14,6 +11,7 @@ const asideLogo = utils.make(
   },
 );
 
+let asideContainer = utils.make('div', 'aside-container w-100 p-4 pt-5');
 asideContainer = utils.appendBulkChild(asideContainer, [asideLogo, projects]);
 
 export default asideContainer;

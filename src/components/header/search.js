@@ -1,6 +1,6 @@
 import utils from '../utils';
 
-let form = utils.make('form', 'form-inline d-none');
+const form = utils.make('form', 'form-inline d-none');
 
 const searchInput = utils.make('input', 'form-control mr-sm-2', undefined, {
   placeholder: 'Add Project Name..',
@@ -21,6 +21,6 @@ const btnTextNode = document.createTextNode('Add');
 
 searchBtn.appendChild(btnTextNode);
 
-form = utils.appendBulkChild(form, [searchInput, searchBtn]);
+utils.appendBulkChild(form, [searchInput, searchBtn]);
 
 export default form;

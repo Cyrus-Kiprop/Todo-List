@@ -1,9 +1,6 @@
+/* eslint-disable import/no-cycle */
 import utils from '../utils';
 import handlers from './handlers';
-
-const isDone = (event) => {
-  const { target } = event;
-};
 
 const pasteData = (data, parent) => {
   parent.innerHTML = '';
@@ -20,7 +17,7 @@ const pasteData = (data, parent) => {
       if (item.complete === false) isDone.checked = false;
       if (item.complete === true) {
         isDone.checked = true;
-        const parent = isDone.parentNode;
+        // const parent = isDone.parentNode;
       }
 
       isDone.addEventListener('click', handlers.isDone);
@@ -54,7 +51,6 @@ const pasteData = (data, parent) => {
         }
       });
     });
-  } else {
   }
 };
 

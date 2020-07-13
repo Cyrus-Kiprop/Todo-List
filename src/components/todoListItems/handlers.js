@@ -1,5 +1,5 @@
+/* eslint-disable import/no-cycle */
 import utils from '../utils';
-import pasteData from './listUtils';
 
 function handlers() {
   const handleDeleteItem = (event) => {
@@ -8,7 +8,6 @@ function handlers() {
     const oldData = JSON.parse(window.localStorage.getItem('listItems'));
     const newData = oldData.filter((item) => item.uuid.toString() !== itemId);
 
-    // window.localStorage.removeItem('listItems');
     window.localStorage.setItem('listItems', JSON.stringify(newData));
 
     parent.parentNode.removeChild(parent);
@@ -25,21 +24,7 @@ function handlers() {
     oldData.push(item);
     window.localStorage.setItem('listItems', JSON.stringify(oldData));
 
-    // if (isChecked === true) {
-    console.log(isChecked);
     utils.strike(target.parentNode, isChecked);
-    // }
-    // if (isChecked === false) {
-    //   console.log(isChecked);
-    //   Array.from(target.parentNode.childNodes)
-    //     .slice(1, -2)
-    //     .forEach((element) => {
-    //       element.classList.add('strike-through');
-    //     });
-    // }
-
-    // .classLists.add('strike-through');
-    // pasteData(oldData, document.getElementsByClassName('list-item-wrapper')[0]);
   };
 
   function toggleInputForm(current = undefined) {
@@ -48,15 +33,12 @@ function handlers() {
 
     const projects = JSON.parse(window.localStorage.getItem('projects'));
 
-    // projects.
-
     projects.forEach((project) => {
       const option = utils.make('option', '', select, {
         project,
       });
       option.appendChild(document.createTextNode(project));
     });
-    // select.setAttribute('id', 'project');
 
     const inputForm = document.getElementsByClassName('list-input-wrapper')[0];
     inputForm.data = current.uuid || '';
@@ -77,8 +59,7 @@ function handlers() {
 
     const data = JSON.parse(window.localStorage.getItem('listItems'));
     const current = data.filter(
-      (record) =>
-        record.uuid.toString() === parent.getAttribute('data-id').toString()
+      (record) => record.uuid.toString() === parent.getAttribute('data-id').toString(),
     );
 
     toggleInputForm(current[0]);

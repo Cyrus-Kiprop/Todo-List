@@ -5,10 +5,6 @@ import handlers from './handlers';
 
 const handler = {
   handleSubmit(event) {
-    // get inputs from the user
-
-    // check for errorfs
-
     const inputForm = document.getElementsByClassName('list-input-wrapper')[0];
 
     const description = document.getElementById('description');
@@ -17,10 +13,10 @@ const handler = {
     const project = document.getElementById('project');
 
     if (
-      title.value === '' ||
-      description.value === '' ||
-      due.value === '' ||
-      project.value === ''
+      title.value === ''
+      || description.value === ''
+      || due.value === ''
+      || project.value === ''
     ) {
       // window.location.reload();
       if (description.value === '') description.classList.add('errors');
@@ -64,7 +60,7 @@ const handler = {
     if (inputForm.data && inputForm.data !== '') {
       userInput.uuid = inputForm.data;
       const newDB = DB.filter(
-        (item) => item.uuid.toString() !== inputForm.data.toString()
+        (item) => item.uuid.toString() !== inputForm.data.toString(),
       );
 
       newDB.push(userInput);
@@ -95,7 +91,7 @@ const addListItem = function addListItem() {
   const inputs = () => {
     let formWrapper = utils.make(
       'div',
-      'list-input-wrapper d-none card position-absolute'
+      'list-input-wrapper d-none card position-absolute',
     );
 
     utils
@@ -127,7 +123,7 @@ const addListItem = function addListItem() {
             rows: 5,
             cols: 33,
             placeholder: 'Enter Description ...',
-          }
+          },
         );
         inputEle.setAttribute('id', 'description');
       }

@@ -31,7 +31,6 @@ const utils = function utils() {
   };
 
   function strike(listItem, isChecked) {
-    // if (isChecked) listItem.classList.add('strike-through');
     if (isChecked) {
       Array.from(listItem.childNodes)
         .slice(1, -2)

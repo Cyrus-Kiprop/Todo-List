@@ -1,5 +1,4 @@
 import utils from '../utils';
-import data from '../data';
 import pasteData from '../todoListItems/listUtils';
 
 const projectFilter = (event) => {
@@ -62,10 +61,7 @@ const pasteProjects = function pasteProjects(projects, filter = projectFilter) {
   JSON.parse(window.localStorage.getItem('projects')).forEach((project) => {
     const proItem = utils.make('div', 'd-flex justify-content-between');
     const li = utils.make('li', 'd-flex flex-column project-item ');
-    const deleteBtn = utils.make(
-      'button',
-      'btn   action-btn',
-    );
+    const deleteBtn = utils.make('button', 'btn   action-btn');
     const dltIcon = utils.make('i', 'fa fa-times-circle-o ml-auto');
     deleteBtn.appendChild(dltIcon);
     const link = utils.make('a', 'links', undefined, {
