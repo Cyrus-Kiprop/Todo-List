@@ -3,8 +3,8 @@ import utils from './utils';
 const todoItems = [
   {
     title: 'Data Structure',
-    priority: 'high',
-    due: '10/7/2020',
+    priority: 'High',
+    due: '2020-07-10',
     description: 'this is just a dummy description of Data Structure',
     project: 'Interview',
     complete: false,
@@ -12,8 +12,8 @@ const todoItems = [
   },
   {
     title: 'React',
-    priority: 'average',
-    due: '11/7/2020',
+    priority: 'Average',
+    due: '2020-07-11',
     description: 'this is just a dummy description of React',
     project: 'Interview',
     complete: false,
@@ -21,8 +21,8 @@ const todoItems = [
   },
   {
     title: 'Javascript',
-    priority: 'high',
-    due: '04/7/2020',
+    priority: 'High',
+    due: '2020-07-04',
     description: 'this is just a dummy description of Javascript',
     project: 'Coding Challenge',
     complete: false,
@@ -30,8 +30,8 @@ const todoItems = [
   },
   {
     title: 'Ruby',
-    priority: 'low',
-    due: '08/07/2020',
+    priority: 'Low',
+    due: '2020-07-08',
     description: 'this is just a dummy description of Ruby',
     project: 'Coding Challenge',
     complete: true,
@@ -39,8 +39,8 @@ const todoItems = [
   },
   {
     title: 'ROR',
-    priority: 'high',
-    due: '11/07/2020',
+    priority: 'High',
+    due: '2020-07-20',
     description: 'this is just a dummy description of ROR',
     project: 'Interview',
     complete: false,
