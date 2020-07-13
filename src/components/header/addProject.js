@@ -2,19 +2,25 @@ import utils from '../utils';
 import pasteProjects from '../sidebar/sidebarUtils';
 
 const handleAddProject = (event) => {
+  event.preventDefault();
   const { target } = event;
   const userInput = document.getElementById('user-project').value;
+
   const projects = JSON.parse(window.localStorage.getItem('projects'));
   projects.push(userInput);
   window.localStorage.removeItem('projects');
   window.localStorage.setItem('projects', JSON.stringify(projects));
 
   const projectContainer = document.getElementsByClassName(
-    'project-container',
+    'project-container'
   )[0];
   projectContainer.innerHTML = '';
   pasteProjects(projectContainer);
-  const itemsDatabase = new utils.Database(todoItems);
+
+  target.childNodes[0].childNodes[0].innerHTML = '';
+  // window.localStorage.setItem('projects', JSON.stringify(todoItems));
+  document.getElementById('user-project').value = '';
+  // const itemsDatabase = new utils.Database(todoItems);
 };
 
 let addProject = utils.make('form', 'project-form');
@@ -30,7 +36,7 @@ const submitProject = utils.make(
   undefined,
   {
     type: 'submit',
-  },
+  }
 );
 submitProject.appendChild(document.createTextNode('submit'));
 

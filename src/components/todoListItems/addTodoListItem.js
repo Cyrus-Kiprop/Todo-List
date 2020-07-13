@@ -7,7 +7,31 @@ const handler = {
   handleSubmit(event) {
     // get inputs from the user
 
+    // check for errorfs
+
     const inputForm = document.getElementsByClassName('list-input-wrapper')[0];
+
+    const description = document.getElementById('description');
+    const title = document.getElementById('title');
+    const due = document.getElementById('due-date');
+    const project = document.getElementById('project');
+
+    if (
+      title.value === '' ||
+      description.value === '' ||
+      due.value === '' ||
+      project.value === ''
+    ) {
+      // window.location.reload();
+      if (description.value === '') description.classList.add('errors');
+      if (title.value === '') title.classList.add('errors');
+      if (due.value === '') due.classList.add('errors');
+      if (project.value === '') project.classList.add('errors');
+
+      inputForm.classList.toggle('d-block');
+      return;
+    }
+
     if (event.target.data);
     const userInput = {
       title: '',
@@ -22,18 +46,26 @@ const handler = {
     const ids = ['title', 'description', 'due-date', 'priority', 'project'];
 
     ids.forEach((id) => {
-      if (id === 'title') userInput.title = document.getElementById(id).value;
-      if (id === 'project') { userInput.project = document.getElementById(id).value; }
-      if (id === 'priority') { userInput.priority = document.getElementById(id).value; }
-      if (id === 'due-date') userInput.due = document.getElementById(id).value;
-      if (id === 'description') { userInput.description = document.getElementById(id).value; }
+      if (id === 'title') userInput.title = title.value;
+      if (id === 'project') {
+        userInput.project = project.value;
+      }
+      if (id === 'priority') {
+        userInput.priority = document.getElementById(id).value;
+      }
+      if (id === 'due-date') userInput.due = due.value;
+      if (id === 'description') {
+        userInput.description = description.value;
+      }
     });
 
     let DB = JSON.parse(window.localStorage.getItem('listItems'));
 
     if (inputForm.data && inputForm.data !== '') {
       userInput.uuid = inputForm.data;
-      const newDB = DB.filter((item) => item.uuid.toString() !== inputForm.data.toString());
+      const newDB = DB.filter(
+        (item) => item.uuid.toString() !== inputForm.data.toString()
+      );
 
       newDB.push(userInput);
       DB = newDB;
@@ -44,9 +76,10 @@ const handler = {
     window.localStorage.setItem('listItems', JSON.stringify(DB));
     pasteData(DB, document.getElementsByClassName('list-item-wrapper')[0]);
     inputForm.data = '';
-    document
-      .getElementsByClassName('list-input-wrapper')[0]
-      .classList.toggle('d-none');
+
+    const s = document.getElementsByClassName('list-input-wrapper')[0];
+    s.classList.remove('d-block');
+    s.classList.toggle('d-none');
   },
 };
 
@@ -62,8 +95,12 @@ const addListItem = function addListItem() {
   const inputs = () => {
     let formWrapper = utils.make(
       'div',
-      'list-input-wrapper d-none card position-absolute',
+      'list-input-wrapper d-none card position-absolute'
     );
+
+    utils
+      .make('i', 'fa fa-times-circle-o ml-auto form-cancel', formWrapper)
+      .addEventListener('click', () => formWrapper.classList.toggle('d-none'));
 
     const form = utils.make('form', '');
     form.addEventListener('submit', handler.handleSubmit);
@@ -90,7 +127,7 @@ const addListItem = function addListItem() {
             rows: 5,
             cols: 33,
             placeholder: 'Enter Description ...',
-          },
+          }
         );
         inputEle.setAttribute('id', 'description');
       }

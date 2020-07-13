@@ -47,12 +47,7 @@ const pasteData = (data, parent) => {
         listItem = utils.appendBulkChild(listItem, [editBtn, deleteBtn]);
         parent.appendChild(listItem);
         if (item.complete) {
-          listItem.classList.toggle('strike-through');
-          Array.from(listItem.childNodes)
-            .slice(1, -2)
-            .forEach((element) => {
-              element.classList.add('strike-through');
-            });
+          utils.strike(listItem);
         }
       });
     });

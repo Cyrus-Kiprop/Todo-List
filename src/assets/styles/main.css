@@ -251,3 +251,10 @@ main.body-content {
 .list-title {
   color: #2f3152;
 }
+
+.errors {
+  border: 1px solid red;
+}
+.form-cancel {
+  color: #4d4d87;
+}
