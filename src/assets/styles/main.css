@@ -2,16 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-.container {
-}
 
 .nav_bar {
-  background-color: #e3f2fd;
   margin-bottom: 40px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f8f9fa !important;
 }
-/* footer*/
+
+/* footer */
 .footer-wrapper {
   background-color: #0e1127;
   height: 373px;
@@ -28,6 +26,7 @@
   font-family: 'Irish Grover', cursive;
   text-transform: uppercase;
 }
+
 .social-item {
   display: flex;
   flex-direction: column;
@@ -42,6 +41,7 @@
   padding-bottom: 10px;
   border-bottom: 2px solid hsla(0, 0%, 84%, 0.2);
 }
+
 .footer-link {
   color: rgba(255, 255, 255, 0.5);
   outline: none;
@@ -122,9 +122,19 @@ main.body-content {
   font-size: 20px;
   text-transform: capitalize;
   font-weight: 700;
-  color: 1d1919;
+  color: #1d1919;
   border-left: 1px solid #1d1919;
   text-align: center;
+}
+
+.list-item > span {
+  padding: 5px 5px;
+  font-size: 16px;
+  color: #4d4d87;
+  text-align: start;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
 }
 
 .table-header > span:first-child {
@@ -143,15 +153,6 @@ main.body-content {
 
 .list-item:first-child {
   margin-top: 1.8rem;
-}
-.list-item > span {
-  padding: 5px 5px;
-  font-size: 16px;
-  color: #4d4d87;
-  text-align: start;
-  display: flex;
-  font-weight: 700;
-  align-items: center;
 }
 
 .list-item > input[type='checkbox'] {
@@ -195,8 +196,9 @@ main.body-content {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: rgba(47, 49, 82, 0.1) 0px 0px 40px 0px;
+  box-shadow: rgba(47, 49, 82, 0.1) 0 0 40px 0;
 }
+
 .add-btn > i {
   color: #69e8da;
   font-size: 20px;
@@ -205,7 +207,7 @@ main.body-content {
 .list-input-wrapper {
   background-color: #f9fafe;
   min-width: 22rem;
-  box-shadow: rgba(47, 49, 82, 0.1) 0px 0px 40px 0px;
+  box-shadow: rgba(47, 49, 82, 0.1) 0 0 40px 0;
   padding: 1rem;
   right: 3rem;
   bottom: 3rem;
@@ -229,12 +231,12 @@ main.body-content {
   background-color: #4d4d87;
 }
 
-.list-input-button:hover i {
-  color: #69e8da;
-}
-
 .list-input-button > i {
   font-size: 22px;
+}
+
+.list-input-button:hover i {
+  color: #69e8da;
 }
 
 .strike-through {
