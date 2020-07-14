@@ -48,20 +48,18 @@ const todoItems = [
   },
 ];
 
-const projects = [
-  'All',
-  'Interview',
-  'Coding Challenge',
-];
+const projects = ['All', 'Interview', 'Coding Challenge'];
 
 const itemsDatabase = new utils.Database(todoItems);
 itemsDatabase.setItems('listItems');
+
 const projectDatabase = new utils.Database(projects);
 projectDatabase.setItems('projects');
 
-const data = {
-  todoItems: itemsDatabase.getItems('listItems'),
-  projects: projectDatabase.getItems('projects'),
-};
+function initialize() {
+  window.localStorage.setItem('listItems', JSON.stringify(todoItems));
+  window.localStorage.setItem('projects', JSON.stringify(projects));
+  // pasteData()
+}
 
-export default data;
+export default initialize;
