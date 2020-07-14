@@ -25,9 +25,9 @@ In this project, we are building TODO List with javascript vanilla, ES6 and webp
 
 ## Live Demo
 
-- [Production](#)
+- [Production](https://rawcdn.githack.com/Cyrus-Kiprop/Todo-List/6448b38ed31d729994aa14917a17026b86b95b2b/index.html)
 
-- [Deployment](#)
+- [Deployment](https://raw.githack.com/Cyrus-Kiprop/Todo-List/gh-pages/index.html)
 
 ## Built With
 
